@@ -16,7 +16,7 @@ const Footer = () => {
     <footer id="footer">
       <div className="footer__wrapper">
         <a href="/" className="footer_logo">
-          Aarab Nishchal
+          Augustus Mathew
         </a>
 
         <ul className="permalinks">
@@ -77,7 +77,7 @@ const Footer = () => {
           <p className="rocket_p">Beam me up, Shawty!</p>
         </div>
         <div className="copyright">
-          <small>&copy; Losier. All rights reserved.</small>
+          <small>&copy; imaugustus24. All rights reserved.</small>
         </div>
       </div>
     </footer>

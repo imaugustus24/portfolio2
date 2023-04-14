@@ -74,7 +74,7 @@ const Contact = () => {
           <article className="contact_option">
             <BsSnapchat className="contact_icons" />
             <h4>Snapchat</h4>
-            <h5>nishu.kr</h5>
+            <h5>im_augustus24</h5>
             <a
               href={`https://snapchat.com/add/${config.snapchatUsername}`}
               target="_blank"
