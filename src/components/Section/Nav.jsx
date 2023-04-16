@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
 import config from "../../config.json";
 import "../../styles/Nav.css";
+import resumePdf from './Resume.pdf';
+
+function downloadResume() {
+  const link = document.createElement('a');
+  link.href = resumePdf;
+  link.download = 'Resume.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 
 const Nav = ({ inView }) => {
   const [activeNav, setActiveNav] = useState("#");
@@ -117,21 +127,13 @@ const Nav = ({ inView }) => {
           </li>
 
           <span>
-                    <a
-            href="/public/resume.pdf"
-            onClick={(e) => {
-              e.preventDefault(); // prevent the default link behavior
-              const link = document.createElement("a");
-              link.download = "Augustus_Mathew_Resume.pdf"; // set the default download name
-              link.href = "/public/res.pdf";
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link); // cleanup
-            }}
-            className="nav_btn"
-          >
-            Resume
-          </a>
+            <a
+              href={() => false}
+              onClick={downloadResume}
+              className="nav_btn"
+            >
+              Resume
+            </a>
           </span>
         </div>
       </ul>
