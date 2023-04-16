@@ -16,6 +16,7 @@ const CTA = () => {
       <a
         href={() => false}
         onClick={() => {
+
           Notification.requestPermission().then((perm) => {
             if (perm === "granted") {
               new Notification("Aarab's Portfolio", {
@@ -36,7 +37,7 @@ const CTA = () => {
         }}
         className="btn"
       >
-    <p className="btn" onClick={downloadResume} style={{ textDecoration: 'none' }}>
+    <p onClick={downloadResume} style={{ textDecoration: 'none' }}>
     Download CV
     </p>
 
