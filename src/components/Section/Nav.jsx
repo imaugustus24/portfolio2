@@ -117,13 +117,21 @@ const Nav = ({ inView }) => {
           </li>
 
           <span>
-            <a
-              href={() => false}
-              onClick={() => alert("Coming Soon...")}
-              className="nav_btn"
-            >
-              Resume
-            </a>
+                    <a
+            href="/public/resume.pdf"
+            onClick={(e) => {
+              e.preventDefault(); // prevent the default link behavior
+              const link = document.createElement("a");
+              link.download = "Augustus_Mathew_Resume.pdf"; // set the default download name
+              link.href = "/public/res.pdf";
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link); // cleanup
+            }}
+            className="nav_btn"
+          >
+            Resume
+          </a>
           </span>
         </div>
       </ul>
