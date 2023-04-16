@@ -1,4 +1,14 @@
 import React from "react";
+import resumePdf from './AugustusRes.pdf';
+
+function downloadResume() {
+  const link = document.createElement('a');
+  link.href = resumePdf;
+  link.download = 'AugutusRes.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 
 const CTA = () => {
   return (
@@ -26,8 +36,12 @@ const CTA = () => {
         }}
         className="btn"
       >
-        Download CV
+    <p className="btn" onClick={downloadResume} style={{ textDecoration: 'none' }}>
+    Download CV
+    </p>
+
       </a>
+
       <a href={"#contact"} className="btn btn-primary">
         Say, Hello...
       </a>
@@ -36,3 +50,4 @@ const CTA = () => {
 };
 
 export default CTA;
+<button onClick={downloadResume}>Download CV</button>
